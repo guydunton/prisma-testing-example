@@ -1,0 +1,10 @@
+services:
+  database:
+    image: 'postgres:17'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: cp2_database_local
+      DATABASE_URL: 'postgresql://postgres:test@localhost:5432/cp2_database_local?schema=public'
+    ports:
+      - '5432:5432'
