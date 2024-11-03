@@ -17,8 +17,8 @@ model User {
 
   groups UserGroup[]
 
-  address   Address @relation(fields: [addressId], references: [id])
-  addressId Int
+  address   Address? @relation(fields: [addressId], references: [id])
+  addressId Int?
 }
 
 model Address {
