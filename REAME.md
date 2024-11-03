@@ -7,3 +7,9 @@ How can we write code which uses PGlite locally & a prisma adapter to write good
 ```
 docker compose up -d
 ```
+
+## Notes
+
+- PGlite didn't run under Jest because it didn't have well tested CJS support https://github.com/electric-sql/pglite/issues/224. This was fixed by moving to vitest
+- Currently the only way to run the migrations is using a SQL file. In future the maintainer of pglite-prisma-adapter wants to support a CLI tool
+- It's unclear whether it's faster to load a migrations file into the db (created through the `test:bootstrap` command) or whether the database should be loaded from file. This probably needs to be tested using a larger project.
