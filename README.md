@@ -1,6 +1,6 @@
 # PGlite testing
 
-How can we write code which uses PGlite locally & a prisma adapter to write good unit tests
+We can write Prisma tests against an in-memory database using PGlite with a Prisma adapter. This repo shows an example setup.
 
 ## Start the database
 
