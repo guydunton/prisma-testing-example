@@ -2,12 +2,6 @@
 
 We can write Prisma tests against an in-memory database using PGlite with a Prisma adapter. This repo shows an example setup.
 
-## Start the database
-
-```
-docker compose up -d
-```
-
 ## Notes
 
 - PGlite didn't run under Jest because it didn't have well tested CJS support https://github.com/electric-sql/pglite/issues/224. This was fixed by moving to vitest
