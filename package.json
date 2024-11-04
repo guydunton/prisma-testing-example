@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "test:bootstrap": "mkdir -p db-test && npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script > db-test/migrate.sql",
-    "test": "vitest"
+    "test": "vitest run --coverage",
+    "test:coverage": "istanbul-merge --out coverage/coverage-final.json e2e-coverage/coverage-final.json && istanbul report --include coverage/coverage-final.json --dir coverage/report html"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,9 @@
   "devDependencies": {
     "@electric-sql/pglite": "^0.2.12",
     "@types/node": "^22.8.7",
+    "@vitest/coverage-istanbul": "^2.1.4",
+    "istanbul": "^0.4.5",
+    "istanbul-merge": "^2.0.0",
     "pglite-prisma-adapter": "^0.3.0",
     "prisma": "^5.21.1",
     "ts-node": "^10.9.2",
